@@ -15,13 +15,10 @@ const ProfilePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 
   const getUser = async () => {
-    const response = await fetch(
-      `https://social-media-backend-phi.vercel.app/users/${userId}`,
-      {
-        method: "GET",
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
+    const response = await fetch(`https://social-media-backend-phi.vercel.app/users/${userId}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` },
+    });
     const data = await response.json();
     setUser(data);
   };
@@ -47,7 +44,10 @@ const ProfilePage = () => {
           <Box m="2rem 0" />
           <FriendListWidget userId={userId} />
         </Box>
-        <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
+        <Box
+          flexBasis={isNonMobileScreens ? "42%" : undefined}
+          mt={isNonMobileScreens ? undefined : "0rem"}
+        >
           <Box m="2rem 0" />
           <PostsWidget userId={userId} isProfile />
         </Box>
