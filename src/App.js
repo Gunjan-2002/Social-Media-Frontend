@@ -35,8 +35,3 @@ function App() {
 }
 
 export default App;
-
-// {/* <MyPostWidget picturePath={user.picturePath} /> */
-// mt={isNonMobileScreens ? undefined : "0rem"}
-// {/* <MyPostWidget picturePath={user.picturePath} /> */}
-// {/* <Box m="2rem 0" /> */}
