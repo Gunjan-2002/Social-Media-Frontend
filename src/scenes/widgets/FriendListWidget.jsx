@@ -9,7 +9,8 @@ const FriendListWidget = ({ userId }) => {
   const dispatch = useDispatch();
   const { palette } = useTheme();
   const token = useSelector((state) => state.token);
-  const friends = useSelector((state) => state.user.friends);
+  const {friends} = useSelector((state) => state.user);
+  console.log(friends[0].picturePath);
 
   const getFriends = async () => {
     const response = await fetch(
@@ -43,8 +44,8 @@ const FriendListWidget = ({ userId }) => {
             key={friend._id}
             friendId={friend._id}
             name={`${friend.firstName} ${friend.lastName}`}
+            userPicturePath={friend.picturePath}
             subtitle={friend.occupation}
-            userPicturePath={friend.picturePath.url}
           />
         ))}
       </Box>
