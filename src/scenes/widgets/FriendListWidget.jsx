@@ -10,8 +10,7 @@ const FriendListWidget = ({ userId }) => {
   const { palette } = useTheme();
   const token = useSelector((state) => state.token);
   const {friends} = useSelector((state) => state.user);
-  console.log(friends[0].picturePath);
-
+  
   const getFriends = async () => {
     const response = await fetch(
       `https://social-media-backend-phi.vercel.app/users/${userId}/friends`,
